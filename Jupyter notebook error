@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\web.py", line 1699, in _execute
+    result = await result
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\gen.py", line 742, in run
+    yielded = self.gen.throw(*exc_info)  # type: ignore
+  File "C:\Users\David\Anaconda3\lib\site-packages\notebook\services\sessions\handlers.py", line 72, in post
+    type=mtype))
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\gen.py", line 735, in run
+    value = future.result()
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\gen.py", line 742, in run
+    yielded = self.gen.throw(*exc_info)  # type: ignore
+  File "C:\Users\David\Anaconda3\lib\site-packages\notebook\services\sessions\sessionmanager.py", line 88, in create_session
+    kernel_id = yield self.start_kernel_for_session(session_id, path, name, type, kernel_name)
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\gen.py", line 735, in run
+    value = future.result()
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\gen.py", line 742, in run
+    yielded = self.gen.throw(*exc_info)  # type: ignore
+  File "C:\Users\David\Anaconda3\lib\site-packages\notebook\services\sessions\sessionmanager.py", line 101, in start_kernel_for_session
+    self.kernel_manager.start_kernel(path=kernel_path, kernel_name=kernel_name)
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\gen.py", line 735, in run
+    value = future.result()
+  File "C:\Users\David\Anaconda3\lib\site-packages\tornado\gen.py", line 209, in wrapper
+    yielded = next(result)
+  File "C:\Users\David\Anaconda3\lib\site-packages\notebook\services\kernels\kernelmanager.py", line 168, in start_kernel
+    super(MappingKernelManager, self).start_kernel(**kwargs)
+  File "C:\Users\David\Anaconda3\lib\site-packages\jupyter_client\multikernelmanager.py", line 110, in start_kernel
+    km.start_kernel(**kwargs)
+  File "C:\Users\David\Anaconda3\lib\site-packages\jupyter_client\manager.py", line 240, in start_kernel
+    self.write_connection_file()
+  File "C:\Users\David\Anaconda3\lib\site-packages\jupyter_client\connect.py", line 547, in write_connection_file
+    kernel_name=self.kernel_name
+  File "C:\Users\David\Anaconda3\lib\site-packages\jupyter_client\connect.py", line 212, in write_connection_file
+    with secure_write(fname) as f:
+  File "C:\Users\David\Anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Users\David\Anaconda3\lib\site-packages\jupyter_client\connect.py", line 102, in secure_write
+with os.fdopen(os.open(fname, open_flag, 0o600), mode) as f:
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\David\\AppData\\Roaming\\jupyter\\runtime\\kernel-7d30d152-5615-41fb-bff6-a1779de680e7.json'
